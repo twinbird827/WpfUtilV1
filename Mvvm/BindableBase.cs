@@ -12,6 +12,24 @@ namespace WpfUtilV1.Mvvm
     [DataContract]
     public class BindableBase : INotifyPropertyChanged, IDisposable
     {
+        private BindableBase Source { get; set; }
+
+        public BindableBase()
+            : this(null)
+        {
+
+        }
+
+        public BindableBase(BindableBase source)
+        {
+            Source = source;
+
+            if (Source != null)
+            {
+                Source.PropertyChanged += OnPropertyChanged;
+            }
+        }
+
         /// <summary>
         /// プロパティの変更を通知するためのマルチキャスト イベント。
         /// </summary>
@@ -44,13 +62,18 @@ namespace WpfUtilV1.Mvvm
         /// <param name="propertyName">リスナーに通知するために使用するプロパティの名前。
         /// この値は省略可能で、
         /// <see cref="CallerMemberNameAttribute"/> をサポートするコンパイラから呼び出す場合に自動的に指定できます。</param>
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             var eventHandler = this.PropertyChanged;
             if (eventHandler != null)
             {
                 eventHandler(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        protected virtual void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+
         }
 
         #region IDisposable Support
@@ -131,7 +154,11 @@ namespace WpfUtilV1.Mvvm
         /// </summary>
         protected virtual void OnDisposed()
         {
-
+            if (Source != null)
+            {
+                Source.PropertyChanged -= OnPropertyChanged;
+            }
+            Source = null;
         }
 
         /// <summary>
