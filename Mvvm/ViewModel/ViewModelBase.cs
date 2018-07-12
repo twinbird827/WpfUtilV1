@@ -9,5 +9,16 @@ namespace WpfUtilV1.Mvvm.ViewModel
 {
     public class ViewModelBase : BindableBase
     {
+        public ViewModelBase()
+            : base()
+        {
+
+        }
+
+        public ViewModelBase(BindableBase source)
+            : base(source)
+        {
+
+        }
     }
 }
