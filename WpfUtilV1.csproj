@@ -68,5 +68,11 @@
   <ItemGroup>
     <Folder Include="Mvvm\Model\" />
   </ItemGroup>
+  <ItemGroup>
+    <Page Include="Mvvm\View\TreeViewItemResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
