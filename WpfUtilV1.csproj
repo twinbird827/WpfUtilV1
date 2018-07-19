@@ -55,9 +55,16 @@
     <Compile Include="Mvvm\BindableBase.cs" />
     <Compile Include="Mvvm\ExclusionAttribute.cs" />
     <Compile Include="Mvvm\RelayCommand.cs" />
+    <Compile Include="Mvvm\ViewModel\IListViewItem.cs" />
     <Compile Include="Mvvm\ViewModel\ViewModelBase.cs" />
     <Compile Include="Mvvm\View\ControlKeyDownBehavior.cs" />
     <Compile Include="Mvvm\View\ControlMouseDoubleClickBehavior.cs" />
+    <Compile Include="Mvvm\View\DataGridEx.cs" />
+    <Compile Include="Mvvm\View\ListViewEx.cs" />
+    <Compile Include="Mvvm\View\PagingUserControl.xaml.cs">
+      <DependentUpon>PagingUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Mvvm\View\PasswordBoxHelper.cs" />
     <Compile Include="Mvvm\View\WindowClosedBehavior.cs" />
     <Compile Include="Nuget\DynamicJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +76,14 @@
     <Folder Include="Mvvm\Model\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Mvvm\View\DefaultStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Mvvm\View\PagingUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Mvvm\View\TreeViewItemResourceDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

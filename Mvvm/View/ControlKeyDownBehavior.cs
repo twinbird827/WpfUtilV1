@@ -15,7 +15,7 @@ namespace WpfUtilV1.Mvvm.View
         /// Commandの依存関係ﾌﾟﾛﾊﾟﾃｨ
         /// </summary>
         public static DependencyProperty CommandProperty =
-            DependencyProperty.RegisterAttached("Command", typeof(ICommand), typeof(ControlMouseDoubleClickBehavior), new UIPropertyMetadata(OnChangeCommand));
+            DependencyProperty.RegisterAttached("Command", typeof(ICommand), typeof(ControlKeyDownBehavior), new UIPropertyMetadata(OnChangeCommand));
 
         /// <summary>
         /// ｺﾏﾝﾄﾞを設定します（添付ﾋﾞﾍｲﾋﾞｱ）

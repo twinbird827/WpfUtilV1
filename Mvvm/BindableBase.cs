@@ -79,8 +79,6 @@ namespace WpfUtilV1.Mvvm
         #region IDisposable Support
         private bool disposedValue = false; // 重複する呼び出しを検出するには
 
-        private bool IsDisposed { get { return disposedValue; } }
-
         private static List<string> DisposedArrays = new List<string>();
 
         protected virtual void Dispose(bool disposing)
@@ -89,21 +87,27 @@ namespace WpfUtilV1.Mvvm
             {
                 if (disposing)
                 {
+                    //var disposables = this.GetType().GetProperties()
+                    //    .Where(p => Attribute.GetCustomAttribute(p, typeof(ExclusionAttribute)) == null)
+                    //    .Select(p => p.GetValue(this, null))
+                    //    .Where(o => o != null && !this.Equals(o))
+                    //    .OfType<BindableBase>()
+                    //    .Where(b => !DisposedArrays.Contains(b.Guid))
+                    //    .ToArray();
+
+                    //DisposedArrays.Add(this.Guid);
+
                     var disposables = this.GetType().GetProperties()
                         .Where(p => Attribute.GetCustomAttribute(p, typeof(ExclusionAttribute)) == null)
                         .Select(p => p.GetValue(this, null))
-                        .Where(o => o != null && !this.Equals(o))
                         .OfType<BindableBase>()
-                        .Where(b => !DisposedArrays.Contains(b.Guid))
-                        .ToArray();
-
-                    DisposedArrays.Add(this.Guid);
+                        .Where(o => o != null && !this.Equals(o));
 
                     foreach (var d in disposables)
                     {
                         try
                         {
-                            if (!d.IsDisposed)
+                            if (!d.disposedValue)
                             {
                                 d.Dispose();
                             }

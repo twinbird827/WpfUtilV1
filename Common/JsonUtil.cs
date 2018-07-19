@@ -15,6 +15,9 @@ namespace WpfUtilV1.Common
         {
             if (encoding == null) encoding = Encoding.UTF8;
 
+            // ﾃﾞｨﾚｸﾄﾘ作成
+            Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+
             using (var stream = new MemoryStream())
             using (var writer = new StreamWriter(filePath, false, encoding))
             {
