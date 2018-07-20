@@ -11,12 +11,12 @@ namespace WpfUtilV1.Common
         /// <summary>
         /// INIﾌｧｲﾙのﾊﾟｽ
         /// </summary>
-        private string Path { get; set; }
+        protected string Path { get; set; }
 
         /// <summary>
         /// ｾｸｼｮﾝ
         /// </summary>
-        private string Section { get; set; }
+        protected string Section { get; set; }
 
         /// <summary>
         /// ｺﾝｽﾄﾗｸﾀ
