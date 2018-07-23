@@ -33,7 +33,7 @@ namespace WpfUtilV1.Common
         /// sectionとkeyからiniﾌｧｲﾙの設定値を取得、設定します。 
         /// </summary>
         /// <returns>指定したsectionとkeyの組合せが無い場合は""が返ります。</returns>
-        protected string this[string section, string key, string defaultValue = ""]
+        public string this[string section, string key, string defaultValue = ""]
         {
             set
             {
@@ -51,7 +51,7 @@ namespace WpfUtilV1.Common
         /// keyからiniﾌｧｲﾙの設定値を取得、設定します。sectionは規定値を指定します。
         /// </summary>
         /// <returns>keyの組合せが無い場合は""が返ります。</returns>
-        protected string this[string key, string defaultValue = ""]
+        public string this[string key, string defaultValue = ""]
         {
             set
             {
