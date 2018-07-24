@@ -55,6 +55,9 @@
     <Compile Include="Mvvm\BindableBase.cs" />
     <Compile Include="Mvvm\ExclusionAttribute.cs" />
     <Compile Include="Mvvm\RelayCommand.cs" />
+    <Compile Include="Mvvm\Service\ConsoleMessageService.cs" />
+    <Compile Include="Mvvm\Service\IMessageService.cs" />
+    <Compile Include="Mvvm\Service\ServiceFactory.cs" />
     <Compile Include="Mvvm\ViewModel\IListViewItem.cs" />
     <Compile Include="Mvvm\ViewModel\ViewModelBase.cs" />
     <Compile Include="Mvvm\View\ControlKeyDownBehavior.cs" />
@@ -65,6 +68,7 @@
       <DependentUpon>PagingUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Mvvm\View\PasswordBoxHelper.cs" />
+    <Compile Include="Mvvm\View\TreeViewEx.cs" />
     <Compile Include="Mvvm\View\WindowClosedBehavior.cs" />
     <Compile Include="Nuget\DynamicJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

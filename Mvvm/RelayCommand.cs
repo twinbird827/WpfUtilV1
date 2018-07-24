@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WpfUtilV1.Mvvm.Service;
 
 namespace WpfUtilV1.Mvvm
 {
@@ -71,7 +72,14 @@ namespace WpfUtilV1.Mvvm
 
         public void Execute(object parameter)
         {
-            if (CanExecute(parameter)) _execute((T)parameter);
+            try
+            {
+                if (CanExecute(parameter)) _execute((T)parameter);
+            }
+            catch (Exception ex)
+            {
+                ServiceFactory.MessageService.Exception(ex);
+            }
         }
 
         #endregion // ICommand Members
