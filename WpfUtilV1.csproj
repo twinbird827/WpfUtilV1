@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="Mvvm\View\PasswordBoxHelper.cs" />
     <Compile Include="Mvvm\View\TreeViewEx.cs" />
+    <Compile Include="Mvvm\View\UserControlLoadedBehavior.cs" />
     <Compile Include="Mvvm\View\WindowClosedBehavior.cs" />
     <Compile Include="Nuget\DynamicJson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
