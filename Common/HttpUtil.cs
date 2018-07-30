@@ -51,6 +51,18 @@ namespace WpfUtilV1.Common
             return HttpUtility.UrlEncode(txt);
         }
 
+        public static string FromUrlEncode(string txt)
+        {
+            txt = HttpUtility.UrlDecode(txt);
+            txt = txt.Replace("&lt;", "<");
+            txt = txt.Replace("&gt;", ">");
+            txt = txt.Replace("&quot;", "\"");
+            txt = txt.Replace("&apos;", "'");
+            txt = txt.Replace("&amp;", "&");
+
+            return txt;
+        }
+
         /// <summary>
         /// HttpWebRequestからHttpWebResponseを表す文字列を取得します。
         /// </summary>
