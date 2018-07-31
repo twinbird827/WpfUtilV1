@@ -17,11 +17,6 @@ namespace WpfUtilV1.Common
         [ComVisible(false)]
         public static extern uint SendMessage(IntPtr hWnd, uint wMsg, uint wParam, uint lParam);
 
-        //TODO FLASHINFO を実装するなら復活させる
-        //[DllImport("user32.dll", CharSet = CharSet.Ansi, SetLastError = true)]
-        //[ComVisible(false)]
-        //public static extern int FlashWindowEx(ref FLASHINFO f);
-
         [DllImport("shell32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         [ComVisible(false)]
         public static extern void SHChangeNotify(uint wEventId, uint uFlags, IntPtr dwItem1, IntPtr dwItem2);

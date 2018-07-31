@@ -97,6 +97,7 @@ namespace WpfUtilV1.Mvvm
 
                     //DisposedArrays.Add(this.Guid);
 
+                    // Disposeするﾌﾟﾛﾊﾟﾃｨを取得
                     var disposables = this.GetType().GetProperties()
                         .Where(p => Attribute.GetCustomAttribute(p, typeof(ExclusionAttribute)) == null)
                         .Select(p => p.GetValue(this, null))

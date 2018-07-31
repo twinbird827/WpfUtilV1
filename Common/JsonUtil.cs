@@ -11,6 +11,13 @@ namespace WpfUtilV1.Common
 {
     public class JsonUtil
     {
+        /// <summary>
+        /// ｲﾝｽﾀﾝｽを指定したﾌｧｲﾙにJson形式で保存します。
+        /// </summary>
+        /// <typeparam name="T">ｲﾝｽﾀﾝｽの型</typeparam>
+        /// <param name="filePath">保存するﾌｧｲﾙﾊﾟｽ</param>
+        /// <param name="data">保存するｲﾝｽﾀﾝｽ</param>
+        /// <param name="encoding">ｴﾝｺｰﾃﾞｨﾝｸﾞ</param>
         public static void Serialize<T>(string filePath, T data, Encoding encoding = null)
         {
             if (encoding == null) encoding = Encoding.UTF8;
@@ -31,6 +38,13 @@ namespace WpfUtilV1.Common
             }
         }
 
+        /// <summary>
+        /// 指定したﾌｧｲﾙをｲﾝｽﾀﾝｽに復元します。
+        /// </summary>
+        /// <typeparam name="T">復元するｲﾝｽﾀﾝｽの型</typeparam>
+        /// <param name="filePath">復元するﾌｧｲﾙﾊﾟｽ</param>
+        /// <param name="encoding">ｴﾝｺｰﾃﾞｨﾝｸﾞ</param>
+        /// <returns></returns>
         public static T Deserialize<T>(string filePath, Encoding encoding = null)
         {
             if (encoding == null) encoding = Encoding.UTF8;

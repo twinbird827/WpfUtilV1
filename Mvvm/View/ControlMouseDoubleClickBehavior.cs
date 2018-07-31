@@ -9,6 +9,9 @@ using System.Windows.Input;
 
 namespace WpfUtilV1.Mvvm.View
 {
+    /// <summary>
+    /// ControlｸﾗｽのMouseDoubleClickｲﾍﾞﾝﾄでCommandを実行するためのﾋﾞﾍｲﾋﾞｱです。
+    /// </summary>
     public class ControlMouseDoubleClickBehavior
     {
         /// <summary>

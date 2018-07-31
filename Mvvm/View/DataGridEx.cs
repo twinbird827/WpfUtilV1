@@ -9,6 +9,10 @@ using System.Windows.Input;
 
 namespace WpfUtilV1.Mvvm.View
 {
+    /// <summary>
+    /// DataGridｶｽﾀﾑｺﾝﾄﾛｰﾙｸﾗｽです。
+    /// Enterｷｰ押下時に右へﾌｫｰｶｽを移します。
+    /// </summary>
     public class DataGridEx : DataGrid
     {
         public DataGridEx() : base()

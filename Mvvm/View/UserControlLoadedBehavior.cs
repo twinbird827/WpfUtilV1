@@ -9,6 +9,9 @@ using System.Windows.Input;
 
 namespace WpfUtilV1.Mvvm.View
 {
+    /// <summary>
+    /// UserControlのLoadedｲﾍﾞﾝﾄで任意のｺﾏﾝﾄﾞを実行するためのﾋﾞﾍｲﾋﾞｱです。
+    /// </summary>
     public class UserControlLoadedBehavior
     {
         /// <summary>

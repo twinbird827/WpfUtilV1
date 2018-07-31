@@ -8,6 +8,9 @@ using System.Windows.Controls;
 
 namespace WpfUtilV1.Mvvm.View
 {
+    /// <summary>
+    /// PasswordBoxｺﾝﾄﾛｰﾙのPasswordﾌﾟﾛﾊﾟﾃｨを処理します。
+    /// </summary>
     public class PasswordBoxHelper : DependencyObject
     {
         public static readonly DependencyProperty IsAttachedProperty = DependencyProperty.RegisterAttached(

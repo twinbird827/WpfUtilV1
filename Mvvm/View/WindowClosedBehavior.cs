@@ -7,6 +7,9 @@ using System.Windows;
 
 namespace WpfUtilV1.Mvvm.View
 {
+    /// <summary>
+    /// WindowのClosedｲﾍﾞﾝﾄでViewModelをDisposeするためのﾋﾞﾍｲﾋﾞｱです。
+    /// </summary>
     public class WindowClosedBehavior
     {
         /// <summary>

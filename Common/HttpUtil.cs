@@ -51,6 +51,11 @@ namespace WpfUtilV1.Common
             return HttpUtility.UrlEncode(txt);
         }
 
+        /// <summary>
+        /// Urlｴﾝｺｰﾄﾞ文字列から文字列に変換します。
+        /// </summary>
+        /// <param name="txt"></param>
+        /// <returns></returns>
         public static string FromUrlEncode(string txt)
         {
             txt = HttpUtility.UrlDecode(txt);

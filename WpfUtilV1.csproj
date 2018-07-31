@@ -64,6 +64,7 @@
     <Compile Include="Mvvm\View\ControlMouseDoubleClickBehavior.cs" />
     <Compile Include="Mvvm\View\DataGridEx.cs" />
     <Compile Include="Mvvm\View\ListViewEx.cs" />
+    <Compile Include="Mvvm\View\ListViewScrollPosition.cs" />
     <Compile Include="Mvvm\View\PagingUserControl.xaml.cs">
       <DependentUpon>PagingUserControl.xaml</DependentUpon>
     </Compile>

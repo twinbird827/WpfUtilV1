@@ -9,6 +9,10 @@ using System.Windows.Input;
 
 namespace WpfUtilV1.Mvvm.View
 {
+    /// <summary>
+    /// ControlのKeyDownｲﾍﾞﾝﾄでCommandを実行するためのﾋﾞﾍｲﾋﾞｱです。
+    /// Command引数にはKeyDownEventArgsが渡されます。
+    /// </summary>
     public class ControlKeyDownBehavior
     {
         /// <summary>

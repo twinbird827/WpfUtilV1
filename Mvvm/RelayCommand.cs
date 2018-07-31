@@ -58,7 +58,6 @@ namespace WpfUtilV1.Mvvm
 
         #region ICommand Members
 
-        [DebuggerStepThrough]
         public bool CanExecute(object parameter)
         {
             return _canExecute == null ? true : _canExecute((T)parameter);
@@ -74,6 +73,8 @@ namespace WpfUtilV1.Mvvm
         {
             try
             {
+                // 別のRelayCommandから呼び出されたｹｰｽを考慮して、
+                // 本ﾒｿｯﾄﾞ内でもCanExecuteにて実行可否を判断する
                 if (CanExecute(parameter)) _execute((T)parameter);
             }
             catch (Exception ex)
