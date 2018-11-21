@@ -166,8 +166,8 @@ namespace WpfUtilV1.Common
                 bitmap.BeginInit();
                 bitmap.StreamSource = stream;
                 bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                bitmap.DecodePixelWidth = 360;
-                bitmap.DecodePixelWidth = 270;
+                bitmap.DecodePixelHeight = 135;
+                bitmap.DecodePixelWidth = 180;
                 bitmap.EndInit();
                 if (freezing && bitmap.CanFreeze)
                 {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -32,10 +33,13 @@ namespace WpfUtilV1.Mvvm.View
         public ListViewEx() : base()
         {
             // ItemsSource更新時にｽｸﾛｰﾙ位置を調整する
-            TargetUpdated += lvw_TargetUpdated;
+            //TargetUpdated += lvw_TargetUpdated;
+
+            Loaded += lvw_Loaded;
 
             // 選択行変更時にIsSelectedﾌﾟﾛﾊﾟﾃｨを変更する
             SelectionChanged += lvw_SelectionChanged;
+
         }
 
         /// <summary>
@@ -75,6 +79,31 @@ namespace WpfUtilV1.Mvvm.View
                     ScrollIntoView(Items[Items.Count - 1]);
                     break;
             }
+
+            foreach (var column in ((GridView)View).Columns)
+            {
+                if (double.NaN.Equals(column.Width))
+                {
+                    column.Width = column.ActualWidth;
+                    column.Width = double.NaN;
+                }
+            }
+
         }
+
+        private void lvw_Loaded(object sender, EventArgs e)
+        {
+            
+        }
+        protected override void OnItemsSourceChanged(IEnumerable oldValue, IEnumerable newValue)
+        {
+            if (!object.Equals(oldValue, newValue) && newValue != null)
+            {
+                (newValue as INotifyCollectionChanged).CollectionChanged += new NotifyCollectionChangedEventHandler(lvw_CollectionChanged);
+            }
+
+            base.OnItemsSourceChanged(oldValue, newValue);
+        }
+
     }
 }
